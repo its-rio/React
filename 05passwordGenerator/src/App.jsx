@@ -6,9 +6,10 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false)
   const [password, setPassword] = useState("")
 
-  // useRef method 
+  // useRef method use for highlight selected text
   const passwordRef = useRef(null)
 
+  // useCallback hook is use to run the methods in useState many times
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -25,6 +26,7 @@ function App() {
 
   }, [length, numberAllowed, charAllowed, setPassword])
 
+  //useEffect hook is use to run the callback hook 
   useEffect(() => {passwordGenerator()}, [length, numberAllowed, charAllowed])
   
   const copyPasswortToClipboard = useCallback(() => {
