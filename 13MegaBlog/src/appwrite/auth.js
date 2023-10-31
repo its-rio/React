@@ -5,6 +5,7 @@ import { Client, Account, ID } from "appwrite";
 export class AuthService {
     client = new Client()
     account;
+
     constructor(){
         this.client
             .setEndpoint(conf.appwriteUrl)
@@ -36,7 +37,7 @@ export class AuthService {
 
     async getCurrentUser(){
         try {
-            return this.account.get()
+            return await this.account.get()
         } catch (error) {
             console.log("Appwrite Service :: getCurrentUser :: error", error);
         }
@@ -53,9 +54,9 @@ export class AuthService {
     }
 }
 
-const authservice = new AuthService()
+const authService = new AuthService()
 
-export default authservice
+export default authService
 
 
 
