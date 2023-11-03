@@ -3,10 +3,12 @@ import conf from "../conf/conf";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service {
+    client = new Client()
+    databases;
+    bucket;
+    
     constructor(){
-        const client = Client()
-        databases;
-        bucket;
+
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId)
@@ -33,9 +35,9 @@ export class Service {
         }
     };
 
-    async updatePost(slug, {title, content, featuredImage, status, userId}){
+    async updatePost(slug, {title, content, featuredImage, status}){
         try {
-            return  this.databases.updateDocument(
+            return  await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -44,7 +46,7 @@ export class Service {
                     content,
                     featuredImage,
                     status,
-                    userId
+                    
                 }
             )
         } catch (error) {
@@ -85,7 +87,7 @@ export class Service {
             return await this.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                queries
+                queries,
             )
         } catch (error) {
             console.log("Appwrite Service :: getPosts :: error", error);
@@ -98,7 +100,8 @@ export class Service {
         try {
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
-                ID.unique()
+                ID.unique(),
+                file
             )
         } catch (error) {
             console.log("Appwrite Service :: uploadFile :: error", error);
