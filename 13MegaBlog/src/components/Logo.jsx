@@ -1,8 +1,9 @@
 import React from 'react'
+import img1 from './images/joomla.png'
 
 function Logo({width = '100px'}) {
   return (
-    <div>Logo</div>
+    <div><img src={img1} alt="" /></div>
   )
 }
 

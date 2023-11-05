@@ -5,18 +5,18 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function PostForm({post}) {
-    const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
+export default function PostForm({ post }) {
+    const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
             slug: post?.$id || "",
             content: post?.content || "",
             status: post?.status || "active",
-        },  
-    })
+        },
+    });
 
-    const navigate = useNavigate()
-    const userData = useSelector(state => state.user.userData)
+    const navigate = useNavigate();
+    const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
         if (post) {
@@ -47,18 +47,18 @@ function PostForm({post}) {
                 }
             }
         }
-    }; 
+    };
 
     const slugTransform = useCallback((value) => {
-        if (value && typeof value === 'string') 
+        if (value && typeof value === "string")
             return value
-            .trim()
-            .toLowerCase()
-            .replace(/[^a-zA-Z\d\s]+/g, "-")
-            .replace(/\s/g, "-");
-        
-        return ''
-    }, [])
+                .trim()
+                .toLowerCase()
+                .replace(/[^a-zA-Z\d\s]+/g, "-")
+                .replace(/\s/g, "-");
+
+        return "";
+    }, []);
 
     React.useEffect(() => {
         const subscription = watch((value, { name }) => {
@@ -70,8 +70,8 @@ function PostForm({post}) {
         return () => subscription.unsubscribe();
     }, [watch, slugTransform, setValue]);
 
-  return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+    return (
+        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
                 <Input
                     label="Title :"
@@ -118,7 +118,5 @@ function PostForm({post}) {
                 </Button>
             </div>
         </form>
-  )
+    );
 }
-
-export default PostForm

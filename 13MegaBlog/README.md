@@ -1,5 +1,15 @@
 # React + Vite
 
+# Accounts for Login:
+sio@gmail.com
+12345678
+
+rio@gmail.com
+123445678
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
