@@ -1,12 +1,17 @@
-import { Inter } from 'next/font/google'
-
-
+import Header from '@/Components/Header'
+import './globals.css'
+import Footer from '@/Components/Footer'
 
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+      <Header />
+      {children}
+      <Footer/>
+      </body> 
     </html>
   )
 }

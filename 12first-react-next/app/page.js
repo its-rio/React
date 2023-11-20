@@ -1,25 +1,18 @@
 "use client"
-import  {Header} from '@/components/Header'
-import React from 'react'
-import { useState } from 'react'
-import Link from 'next/link'
+import axios from 'axios'
+import React,{useState} from 'react'
 
- 
-function page() {
-  const [user, setuser] = useState("Rio")
-  const [editor, seteditor] = useState("Akarsh")
-  
+
+const page = () => {
   return (
     <>
+    <div> 
+      <h1>Main Page</h1> <br/>
+      <button className='px-5 py-3 bg-green-700 font-bold rounded-xl m-5'>Get Images </button>
+    </div>
 
-    {/* <Header /> */}
-    <h1>This is home page</h1>
-        <Link href="/About"></Link>
-        <Link href="/Blog"></Link>
-        <Link href="/Career"></Link>
-    
     </>
   )
 }
-
+ 
 export default page
