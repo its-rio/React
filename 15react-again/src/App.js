@@ -24,13 +24,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={styleObj}>{b} React World</h1><br/>
+      <h1 style={styleObj}>{b} React World {6+6}</h1><br/>
+
       {/* How we give styling */}
       <h2 style={{color:"red", backgroundColor:"grey"}}>Num is  {a}</h2>
+
+    {/* Conditional rendering */}
       <span>{a === 100 ? "Hii": "Bye" }</span> <br/>
+
       {"Sum is " + sum(3,4)} <br/>
 
       {c === true ? "Its true" : "Its false"} <br/>
+
       {/* Accessing arrays with map in react */}
       <ol>
         {fruits.map((fruit) => {
@@ -39,6 +44,7 @@ function App() {
       </ol>
 
         <p>{obj.name} {obj.age}</p>
+        {/* Convert to string with JSON */}
         <p>{JSON.stringify(obj)}</p>
     </div>
   );
