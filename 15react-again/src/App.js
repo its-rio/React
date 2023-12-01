@@ -22,6 +22,22 @@ function App() {
     age:20
   }
 
+  // let arr = [[6,7,12,43], [55,77,78,44]]
+  // arr.map((item) => {
+  //   return item.map((subItem) => {
+  //     console.log(subItem);
+  //   })
+  // })
+
+  var productArr = [
+    {id: 1001, title: "shoes", price: 10},
+    {id: 1002, title: "sneaker", price: 30},
+    {id: 1003, title: "pants", price: 20}
+  ]
+  // productArr.map((product) => {
+  //   console.log(product);
+  // })
+
   return (
     <div className="App">
       <h1 style={styleObj}>{b} React World {6+6}</h1><br/>
@@ -38,8 +54,8 @@ function App() {
 
       {/* Accessing arrays with map in react */}
       <ol>
-        {fruits.map((fruit) => {
-          return <li>{fruit}</li> 
+        {fruits.map((fruit, index) => {
+          return <li key={index}>{fruit}</li> 
         })}
       </ol>
 
@@ -48,9 +64,16 @@ function App() {
         <p>{JSON.stringify(obj)}</p>
 
       {/*         Creating props              */}
-        <Card title={"Tshirt"} price={10}/>
+        {/* <Card title={"Tshirt"} price={10}/>
         <Card title={"shoes"} price={20} />
-        <Card title={"Bag"} price={25} />
+        <Card title={"Bag"} price={25} /> */}
+
+
+      {
+        productArr.map((product) => {
+          return <Card key={product.id} title={product.title} price={product.price}/>
+        })
+      }
     </div>
 
     
