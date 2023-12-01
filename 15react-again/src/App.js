@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './Card';
 
 function sum(a,b){
   return a + b;
@@ -46,7 +46,14 @@ function App() {
         <p>{obj.name} {obj.age}</p>
         {/* Convert to string with JSON */}
         <p>{JSON.stringify(obj)}</p>
+
+      {/*         Creating props              */}
+        <Card title={"Tshirt"} price={10}/>
+        <Card title={"shoes"} price={20} />
+        <Card title={"Bag"} price={25} />
     </div>
+
+    
   );
 }
 
