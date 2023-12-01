@@ -30,9 +30,9 @@ function App() {
   // })
 
   var productArr = [
-    {id: 1001, title: "shoes", price: 10},
-    {id: 1002, title: "sneaker", price: 30},
-    {id: 1003, title: "pants", price: 20}
+    {id: 1001, title: "shoes", price: 10, stock: 34},
+    {id: 1002, title: "sneaker", price: 30, stock: 63},
+    {id: 1003, title: "pants", price: 20, stock: 23}
   ]
   // productArr.map((product) => {
   //   console.log(product);
@@ -71,7 +71,7 @@ function App() {
 
       {
         productArr.map((product) => {
-          return <Card key={product.id} title={product.title} price={product.price}/>
+          return <Card key={product.id} title={product.title} price={product.price} stock={product.stock}/>
         })
       }
     </div>
