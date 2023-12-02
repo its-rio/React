@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+:root{
+    --red:#d01c28;
+    --grey:#2e2e2e;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 80vw;
+    margin: 0 auto;
+
+    height: 72px;
+    /* padding: 6px; */
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+nav button{
+    all: unset;
+    background-color: var(--red);
+    color: white;
+    padding: 6px 16px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+.hero-content{
+    /* border: 2px solid black; */
+    width: 50%;
+}
+.hero-content h1{
+    font-weight: 1000;
+    font-size: 5vw;
+    line-height: 5vw;
+    text-align: center;
+}
+.hero-content p{
+    font-size: 1.3vw;
+    text-align: left;
+}
+.hero-btn button{
+    all: unset;
+    background-color: var(--red);
+    color: white;
+    padding: 6px 16px;
+    height: 32px;
+    margin-left: 2vw;
+    border-radius: 1vw;
+    margin: 1vw;
+}
+
+.shopping p{
+    font-size: 1vw;
+    margin: 1vw;
+}
+.brand-icons img{
+    /* border: 2px solid black; */
+    margin-left: 2vw;
+    margin: 1vw;
+}
+.hero-image{
+    /* border: 2px solid black; */
+    width: 50%;
+}
+.hero-image img{
+    width: 30vw;
+    height: 30vw;
+    padding: 4vw;
+}
